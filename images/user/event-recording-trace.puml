@@ -1,0 +1,12 @@
+@startuml
+
+rectangle Host
+rectangle "Target/QEMU Target" as target
+rectangle "Trace Compass" as tracecompass
+rectangle "Babeltrace" as babeltrace
+Host --> target : Connecting
+target --> Host : RTEMS Trace Data
+Host --> tracecompass : LTTng Trace
+Host --> babeltrace : LTTng Trace
+
+@enduml
